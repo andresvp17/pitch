@@ -9,7 +9,7 @@
 	export let data;
 	let savedIds;
 	let isLiked;
-	$: if (typeof localStorage !== 'undefined') {
+	$: if (typeof localStorage !== 'undefined' && localStorage.length > 0) {
 		savedIds = getItemsInLocalStorage('savedIds');
 		isLiked = savedIds.includes(uriParameter(data?.playlist?.uri)) ? 'liked' : '';
 	}
